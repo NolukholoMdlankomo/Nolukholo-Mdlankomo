@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>Simple calculator</h1>
+<div>
+    
+    <input id="screen">
+    <table>
+        <tr>
+                <td id="cancel" onclick="dis('c')">C</td>
+                <td id="brackets " onclick="dis('()')">()</td>
+                <td id="percentage" onclick="dis('%')">%</td>
+                <td id="division">÷</td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')"></td>
+            <td><input type="button" value="2" onclick="dis('2') "></td>  
+            <td><input type="button" value="3" onclick="dis ('3')"></td>
+            <td id="multiplication" onclick="dis('X')">X</td>
+
+    </tr> 
+    <tr>
+        <td><input type="button" value="4" onclick="dis('4')"></td>
+        <td><input type="button" value="5"onclick="dis('5')"></td>
+        <td><input type="button" value="6"onclick="dis('6')"></td>
+        <td id="subtrate" onclick="dis('')">-</td>
+
+    </tr>
+    <tr>
+            <td><input type="button" value="7" onclick="dis('7')"></td>
+            <td><input type="button" value="8" onclick="dis('8')"></td>
+            <td><input type="button" value="9" onclick="dis ('9')"></td>
+            <td id="plus" onclick="dis('+')">+</td>
+
+    </tr>
+    <tr>
+        <td id="plus " onclick="dis('+')">+/-</td>
+        <td id="zero" onclick="dis('0')">0</td>
+        <td id="coma" onclick="dis(',')">,</td>
+        <td id="equal" onclick="calculator()">=</td>
+
+</tr>
+
+        
+</table>
+</div>
+<script>
+    const display =document.getElementById("screen");
+
+    function dis(input){
+        display.value += input;
+    }
+    
+function calculator(){
+    display.value =eval(display.value);
+
+}
+function clr(){
+    display.value =''
+
+}
+
+
+function myFunction(event)
+{
+   if (event.key == '0'  || event.key == '1'
+    ||event.key == '2'  ||event.key == '3'
+    ||event.key == '4'  ||event.key == '5'
+    ||event.key == '6'  ||event.key == '7'
+    ||event.key == '8' ||event.key == '9'
+    ||event.key ==  '+' ||event.key == ''
+    ||event.key == '*' ||event.key == '/' )
+    document.getElementById("result").value += event.key;
+
+}
+</script>
+</body>
+</html>
